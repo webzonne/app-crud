@@ -1,6 +1,5 @@
 import React from 'react'
 import LoadingTwo from '../components/LoadingTwo'
-import FileBase from 'react-file-base64';
 
 export default function Formulario({ isLoadingTwo, previewX, previewE, imagenExamen, guardarDisabledE, guardarDisabledX, imagenX, guardar, handlechange, handleFileChangeRayosX, handleFileChangeExamen, handleClick, checked, pacient }) {
 
@@ -8,74 +7,157 @@ export default function Formulario({ isLoadingTwo, previewX, previewE, imagenExa
         <>
             <form onSubmit={guardar}>
                 <div className='border w-8/12 mx-auto p-5 border-slate-400  flex-inline'>
-                    {/* NOMBRE */}
-                    <p>NOMBRE DEL PACIENTE</p>
+                    {/* NOMBRES */}
+                    <p>NOMBRES</p>
                     <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='nombre' defaultValue={pacient.nombre} />
-                    {/* GENERO */}
-                    <p>GENERO</p>
+                    {/* APELLIDOS */}
+                    <p>APELLIDOS</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='apellido' defaultValue={pacient.apellido} />
+                    {/* CEDULA */}
+                    <p>CEDULA DE INDENTIDAD</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='cedula' defaultValue={pacient.cedula} />
+                    {/* EDAD */}
+                    <p>EDAD</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='number' name='edad' defaultValue={pacient.edad} />
+                    {/* SEXO */}
+                    <p>SEXO</p>
                     {/* <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='sexo' defaultValue={pacient.sexo} /> */}
                     <select defaultValue={pacient.sexo} onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name="sexo" >
                         <option value="">Seleccione un sexo</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
                     </select>
-                    {/* EDAD */}
-                    <p>EDAD</p>
-                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='number' name='edad' defaultValue={pacient.edad} />
-                    {/* CEDULA */}
-                    <p>CEDULA</p>
-                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='cedula' defaultValue={pacient.cedula} />
-                    {/* TELEFONO */}
-                    <p>TELEFONO</p>
-                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='telefono' defaultValue={pacient.telefono} />
-                    {/* FECHA DE NACIMIENTO */}
-                    <p>FECHA NACIMIENTO</p>
-                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='date' name='fechaNacimiento' defaultValue={pacient.fechaNacimiento} />
-                    {/* OCUPACION */}
-                    <p>OCUPACION</p>
+                     {/* ESTADO CIVIL */}
+                     <p>ESTADO CIVIL</p>
+                    {/* <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='sexo' defaultValue={pacient.sexo} /> */}
+                    <select defaultValue={pacient.sexo} onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name="estado" >
+                        <option value="">Seleccione un estado</option>
+                        <option value="Soltero">Soltero</option>
+                        <option value="Casado">Casado</option>
+                    </select>
+                     {/* NACIONALIDAD */}
+                     <p>NACIONALIDAD</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='nacionalidad' defaultValue={pacient.nacionalidad} />
+                    {/* LUGAR DONDE VIVE */}
+                    <p>LUGAR DONDE VIVE</p>
+                    <select defaultValue={pacient.lugar} onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name="lugar" >
+                        <option value="">Seleccione el lugar</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Apartamento">Apartamento</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    {/* USA ESCALERAS */}
+                    <p>USA ESCALERAS DIARIAMENTE</p><br/>
+                    
+                    <input className='mr-2' type='radio' name='escalera' value='si'/>
+                    <label>SI</label><br/>
+                    {/* Numero de escalones */}
+                    <p>Numero de escalones</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='number' name='escalones' defaultValue={pacient.escalones} />
+                    <input className='mr-2' type='radio' name='escalera' value='no'/>
+                    <label>NO</label><br/><br/>
+                    {/* PROFESION O TRABAJO */}
+                    <p>PROFESION O TRABAJO</p>
                     <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='ocupacion' defaultValue={pacient.ocupacion} />
-                    {/* DIRECCION */}
-                    <p>DIRECCION</p>
-                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='direccion' defaultValue={pacient.direccion} />
-                    {/* VIVIENDA */}
-                    <p>VIVIENDA</p>
-                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='vivienda' defaultValue={pacient.vivienda} />
-                    {/* NIVEL */}
-                    <p>NIVEL</p>
-                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='nivel' defaultValue={pacient.nivel} />
-                    {/* RUTA DE ACCESO */}
-                    <p>RUTA DE ACCESO</p>
-                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='ruta' defaultValue={pacient.ruta} />
-                    {/* ANTECEDENTES */}
-                    <p>ANTECEDENTES</p><br />
-                    <input onChange={handlechange} onClick={handleClick} type="checkbox" name="diabetes" value="DIABETES" checked={pacient.antecedentes.diabetes} />
-                    <label htmlFor="diabetes">DIABETES</label><br />
-                    <input onChange={handlechange} type="checkbox" name="hipertencion" value="HIPERTENSION" checked={pacient.antecedentes.hipertencion} />
-                    <label htmlFor="hipertencion"> HIPERTENSION</label><br />
-                    <input onChange={handlechange} type="checkbox" name="artritis" value="ARTRITIS" checked={pacient.antecedentes.artritis} />
-                    <label htmlFor="artritis"> ARTRITIS</label><br />
-
-                    <input onChange={handlechange} type="checkbox" name="psoriasis" value="PSORIASIS" checked={pacient.antecedentes.psoriasis} />
-                    <label htmlFor="PSORIASIS">PSORIASIS</label><br />
-
-                    <input onChange={handlechange} type="checkbox" name="lupus" value="LUPUS" checked={pacient.antecedentes.lupus} />
-                    <label htmlFor="LUPUS">LUPUS</label><br />
-
-                    <input onChange={handlechange} type="checkbox" name="anemiaDrepanocitica" value="ANEMIA DREPANOCITICA" checked={pacient.antecedentes.anemiaDrepanocitica} />
-                    <label htmlFor="ANEMIA DREPANOCITICA">ANEMIA DREPANOCITICA</label><br />
-
-                    <input onChange={handlechange} type="checkbox" name="perther" value="PERTHER" checked={pacient.antecedentes.perther} />
-                    <label htmlFor="PERTHER">PERTHER</label><br /><br />
-
+                    {/* FECHA DE HISTORIA CLINICA */}
+                    <p>FECHA DE HISTORIA CLINICA</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='date' name='fechaclinica' defaultValue={pacient.fechaclinica} />
                     {/* ENFERMEDAD ACTUAL */}
                     <p>ENFERMEDAD ACTUAL</p>
                     <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='enfermedad' defaultValue={pacient.enfermedad}></textarea>
+                    {/* ANTECEDENTES */}
+                    <p>ANTECEDENTES PERSONALES PATOLOGICOS:</p><br />
+                    <input onChange={handlechange} onClick={handleClick} type="checkbox" name="1hta" value="1HTA" checked={pacient.antecedentes.hta} />
+                    <label htmlFor="diabetes">1HTA</label><br />
+                    <input onChange={handlechange} type="checkbox" name="2DM" value="2DM" checked={pacient.antecedentes.DM} />
+                    <label htmlFor="hipertencion">DM</label><br />
+                    <input onChange={handlechange} type="checkbox" name="ef" value="enfermedad de la infancia" checked={pacient.antecedentes.ef} />
+                    <label htmlFor="artritis">ENFERMEDAD DE LA INFANCIA</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="ETS" value="enfermedad de transmicion sexual" checked={pacient.antecedentes.ets} />
+                    <label htmlFor="PSORIASIS">ENFERMEDAD DE TRANSMISION SEXUAL</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="CARDIOPATIA" value="CARDIOPATIA" checked={pacient.antecedentes.cardiopatia} />
+                    <label htmlFor="LUPUS">CARDIOPATIA</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="NEFROPATIAS" value="NEFROPATIAS" checked={pacient.antecedentes.nefropatias} />
+                    <label htmlFor="ANEMIA DREPANOCITICA">NEFROPATIAS</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="neuropatia" value="neuropatia" checked={pacient.antecedentes.neuropatia} />
+                    <label htmlFor="PERTHER">NEUROPATIA</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="tuberculosis" value="tuberculosis" checked={pacient.antecedentes.tuberculosis} />
+                    <label htmlFor="PERTHER">TUBERCULOSIS</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="neoplasicas" value="neoplasicas" checked={pacient.antecedentes.neoplasicas} />
+                    <label htmlFor="PERTHER">NEOPLASICAS</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="enfermedadesEndocrinas" value="enfermedades endocrinas" checked={pacient.antecedentes.eendocrinas} />
+                    <label htmlFor="PERTHER">ENFERMEDADES ENDOCRINAS</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="alergias" value="alergias" checked={pacient.antecedentes.alergias} />
+                    <label htmlFor="PERTHER">ALERGIAS</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="fracturas" value="fracturas" checked={pacient.antecedentes.fracturas} />
+                    <label htmlFor="PERTHER">FRACTURAS</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="quemaduras" value="quemaduras" checked={pacient.antecedentes.quemaduras} />
+                    <label htmlFor="PERTHER">QUEMADURAS</label><br />
+
+                    <input onChange={handlechange} type="checkbox" name="cirugiaPrevia" value="cirugiaPrevia" checked={pacient.antecedentes.cp} />
+                    <label htmlFor="PERTHER">CIRUGIA PREVIA</label><br/><br/><br/><br/>
+                    <p>HABITOS PSICOBIOLOGICOS:</p><br />
+                    <input onChange={handlechange} type="checkbox" name="quemaduras" value="quemaduras" checked={pacient.antecedentes.quemaduras} />
+                    <label htmlFor="PERTHER">DEPORTES</label><br />
+                    <input onChange={handlechange} type="checkbox" name="quemaduras" value="quemaduras" checked={pacient.antecedentes.quemaduras} />
+                    <label htmlFor="PERTHER">CAFE</label><br />
+                    <input onChange={handlechange} type="checkbox" name="quemaduras" value="quemaduras" checked={pacient.antecedentes.quemaduras} />
+                    <label htmlFor="PERTHER">TABAQUICOS</label><br />
+                    <input onChange={handlechange} type="checkbox" name="quemaduras" value="quemaduras" checked={pacient.antecedentes.quemaduras} />
+                    <label htmlFor="PERTHER">ALCOHOL</label><br />
+                    <input onChange={handlechange} type="checkbox" name="quemaduras" value="quemaduras" checked={pacient.antecedentes.quemaduras} />
+                    <label htmlFor="PERTHER">DROGAS ILICITAS</label><br /><br/><br/><br/>
                     {/* DIAGNOSTICO PRE-OPERATORIO */}
-                    <p>DIAGNOSTICO PRE-OPERATORIO</p>
-                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='diagnostico' defaultValue={pacient.diagnostico}></textarea>
+                    {/* <p>DIAGNOSTICO PRE-OPERATORIO</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='diagnostico' defaultValue={pacient.diagnostico}></textarea> */}
                     {/* DIAGNOSTICO POST-OPERATORIO */}
-                    <p>DIAGNOSTICO POST-OPERATORIO</p>
-                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='diagnosticoPost' defaultValue={pacient.diagnosticoPost}></textarea>
+                    {/* <p>DIAGNOSTICO POST-OPERATORIO</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='diagnosticoPost' defaultValue={pacient.diagnosticoPost}></textarea> */}
+
+
+                    {/* EXAMEN FISICO */}
+                    <p>EXAMEN FISICO:</p><br/>
+                    <p>PRESION ARTERIAL</p>
+                    <input onChange={handlechange} className='w-1/4 py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='presionArterial' defaultValue={pacient.presionArterial} />
+                    <p>TEMPERATURA</p>
+                    <input onChange={handlechange} className='w-1/4 py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='presionArterial' defaultValue={pacient.presionArterial} />
+                    <p>FRECUENCIA RESPIRATORIA</p>
+                    <input onChange={handlechange} className='w-1/4 py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='presionArterial' defaultValue={pacient.presionArterial} />
+                    <p>PULSO</p>
+                    <input onChange={handlechange} className='w-1/4 py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='presionArterial' defaultValue={pacient.presionArterial} />
+                    <p>TALLA</p>
+                    <input onChange={handlechange} className='w-1/4 py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='presionArterial' defaultValue={pacient.presionArterial} />
+                    <p>PESO</p>
+                    <input onChange={handlechange} className='w-1/4 py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='presionArterial' defaultValue={pacient.presionArterial} />
+                    <p>IMC</p>
+                    <input onChange={handlechange} className='w-1/4 py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='presionArterial' defaultValue={pacient.presionArterial} />
+                    <p>PIEL</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='enfermedad' defaultValue={pacient.enfermedad}></textarea>
+                    <p>GANGLIOS</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='enfermedad' defaultValue={pacient.enfermedad}></textarea>
+                    <p>CABEZA</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='enfermedad' defaultValue={pacient.enfermedad}></textarea>
+                    <p>CUELLO</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='enfermedad' defaultValue={pacient.enfermedad}></textarea>
+                    <p>TORAX</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='enfermedad' defaultValue={pacient.enfermedad}></textarea>
+                    <p>ABDOMEN</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='enfermedad' defaultValue={pacient.enfermedad}></textarea>
+                    <p>GENITALES</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='enfermedad' defaultValue={pacient.enfermedad}></textarea>
+                    <p>SISTEMA NERVIOSO</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='enfermedad' defaultValue={pacient.enfermedad}></textarea>
+
                     {/* FUERZA MUSCULAR */}
                     <p>FUERZA MUSCULAR</p>
                     <table className='w-full my-7 table'>
@@ -179,61 +261,72 @@ export default function Formulario({ isLoadingTwo, previewX, previewE, imagenExa
                     </table>
 
                     {/* PLAN */}
-                    <p>PLAN</p>
-                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='plan' defaultValue={pacient.plan}></textarea>
+                    {/* <p>PLAN</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='plan' defaultValue={pacient.plan}></textarea> */}
                     {/* PENDIENTE */}
-                    <p>PENDIENTE</p>
-                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='pendiente' defaultValue={pacient.pendiente}></textarea>
+                    {/* <p>PENDIENTE</p>
+                    <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='pendiente' defaultValue={pacient.pendiente}></textarea> */}
                     {/* TIPO DE ABORDAJE */}
-                    <p>TIPO DE ABORDAJE</p>
+                    {/* <p>TIPO DE ABORDAJE</p>
                     <select defaultValue={pacient.abordaje} onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name="abordaje" >
                         <option value="">Seleccione tipo de abordaje</option>
                         <option value="Anterior">Anterior</option>
                         <option value="Lateral">Lateral</option>
                         <option value="Posterior">Posterior</option>
                         <option value="otras">otras</option>
-                    </select>
+                    </select> */}
                     {/* DONDE FUE EVALUADO */}
-                    <p>DONDE FUE EVALUADO</p>
+                    {/* <p>DONDE FUE EVALUADO</p>
                     <select defaultValue={pacient.evaluado} onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name="evaluado" >
                         <option value="">Seleccione el lugar</option>
                         <option value="IVSS Hospital Domingo Luciani">IVSS Hospital Domingo Luciani</option>
                         <option value="IVSS Dr Jose Maria Vargas">IVSS Dr Jose Maria Vargas</option>
-                    </select>
+                    </select> */}
+                    
+                    {/* LUGAR DE INTERVENCION */}
+                    <p>LUGAR DE INTERVENCION:</p><br/>
+                    <input className='mr-2' type='radio' name='escalera' value='publico'/>
+                    <label>PUBLICO</label><br/>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='escalones' defaultValue={pacient.escalones} />
+                    <input className='mr-2' type='radio' name='escalera' value='privado'/>
+                    <label>PRIVADO</label><br/>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='escalones' defaultValue={pacient.escalones} />
+                   
+
                     {/* FECHA DE POSIBLE CIRUGIA */}
-                    <p>FECHA DE POSIBLE CIRUGIA</p>
-                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='date' name='fechaCirugia' defaultValue={pacient.fechaCirugia} />
+                    {/* <p>FECHA DE POSIBLE CIRUGIA</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='date' name='fechaCirugia' defaultValue={pacient.fechaCirugia} /> */}
                     {/* LUGAR DE OPERACION */}
-                    <p>LUGAR DE OPERACION</p>
+                    {/* <p>LUGAR DE OPERACION</p>
                     <select defaultValue={pacient.operacion} onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name="operacion" >
                         <option value="">Seleccione el lugar</option>
                         <option value="IVSS Hospital Domingo Luciani">IVSS Hospital Domingo Luciani</option>
                         <option value="IVSS Dr Jose Maria Vargas">IVSS Dr Jose Maria Vargas</option>
-                    </select>
+                    </select> */}
                     {/* FECHA DE OPERACION */}
-                    <p>FECHA DE OPERACION</p>
-                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='date' name='fechaOperacion' defaultValue={pacient.fechaOperacion} />
+                    {/* <p>FECHA DE OPERACION</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='date' name='fechaOperacion' defaultValue={pacient.fechaOperacion} /> */}
                     {/* PROCEDENCIA DE PROTESIS */}
-                    <p>PROCEDENCIA DE PROTESIS</p>
+                    {/* <p>PROCEDENCIA DE PROTESIS</p>
                     <select defaultValue={pacient.protesis} onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name="protesis" >
                         <option value="">Seleccione Procedencia</option>
                         <option value="PROTESIS MEHECO">PROTESIS MEHECO</option>
                         <option value="PROTESIS CASA COMERCIAL">PROTESIS CASA COMERCIAL</option>
-                    </select>
+                    </select> */}
                     {/* RAYOS X */}
-                    <p>SUBIR IMAGEN RAYOS X</p>
-                    <div className='my-7'>
+                    {/* <p>SUBIR IMAGEN RAYOS X</p>
+                    <div className='my-7'> */}
                         {/* <FileBase type='file' multiple={false} onDone={handleFileChangeRayosX} /> */}
-                        <input type='file' name='rayosx' onChange={handleFileChangeRayosX}/><br/><br/>
+                        {/* <input type='file' name='rayosx' onChange={handleFileChangeRayosX}/><br/><br/>
                         {previewX ? <img src={previewX} width={150} height={150} alt='Preview' />:imagenX ? <p>Cargando...</p>:null}
-                    </div>
+                    </div> */}
                      {/* EXAMEN */}
-                     <p>SUBIR EXAMEN</p>
-                    <div className='my-7'>
+                     {/* <p>SUBIR EXAMEN</p>
+                    <div className='my-7'> */}
                         {/* <FileBase type='file' multiple={false} onDone={handleFileChangeExamen} /> */}
-                        <input type='file' name='examen' onChange={handleFileChangeExamen}/><br/><br/>
+                        {/* <input type='file' name='examen' onChange={handleFileChangeExamen}/><br/><br/>
                         {previewE ? <img src={previewE} width={150} height={150} alt='Preview' />:imagenExamen ? <p>Cargando...</p>:null}
-                    </div>
+                    </div> */}
                     <div className='flex items-center'>
                         <button className={`bg-green-700 py-3 px-5 mr-5 rounded-lg text-slate-50 ${guardarDisabledX || guardarDisabledE ? 'disabled':''} `}  disabled={guardarDisabledX || guardarDisabledE}>Guardar</button>
                         {isLoadingTwo ? <LoadingTwo /> : null}
