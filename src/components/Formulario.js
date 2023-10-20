@@ -158,6 +158,96 @@ export default function Formulario({ isLoadingTwo, previewX, previewE, imagenExa
                     <p>SISTEMA NERVIOSO</p>
                     <textarea onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' rows='4' type='text' name='enfermedad' defaultValue={pacient.enfermedad}></textarea>
 
+                    {/* LABORATORIOS */}
+                    <p>LABORATORIOS:</p><br/>
+                    <table className='w-full my-7 table'>
+                        <thead>
+                            <tr>
+                                <th>ITEMS</th>
+                                <th>Pre operatorio</th>
+                                <th>Post operatorio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LEUCOSITOS</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>LINFOCITOS</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>NEUTROFILOS</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>PLAQUETAS</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>HGB</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>PCR</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>VSG</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>PT</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>PTT</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>COLESTEROL</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>TRIGLIRIDOS</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>HIV</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>VDRL</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>TPIAJE</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none'  type='text' name='leucositosPost'/></td>
+                            </tr>
+                            <tr>
+                                <td>OTROS</td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPre'/></td>
+                                <td><input className='w-full outline-none' type='text' name='leucositosPost'/></td>
+                            </tr>
+                        </tbody>
+                    </table><br/>
+
+
                     {/* FUERZA MUSCULAR */}
                     <p>FUERZA MUSCULAR</p>
                     <table className='w-full my-7 table'>
@@ -291,8 +381,43 @@ export default function Formulario({ isLoadingTwo, previewX, previewE, imagenExa
                     <input className='mr-2' type='radio' name='escalera' value='privado'/>
                     <label>PRIVADO</label><br/>
                     <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='escalones' defaultValue={pacient.escalones} />
-                   
+                    
 
+                    {/* INTERVENCION QUIRURGICA */}
+                    <p>INTERVENCION QUIRURGICA:</p><br/>
+                    <p>FECHA</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='date' name='fechaclinica' defaultValue={pacient.fechaclinica} />
+                    <p>TIPO DE CIRUGIA</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='tCirugia' defaultValue={pacient.tCirugia} />
+                    <p>CIRUJANO</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='tCirugia' defaultValue={pacient.tCirugia} />
+                    <p>DIAGNOSTICO PRE</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='tCirugia' defaultValue={pacient.tCirugia} />
+                    <p>MEDICACION PREOPERATORIA</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='tCirugia' defaultValue={pacient.tCirugia} />
+                    <p>MEDICACION DURANTE LA CIRUGIA</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='tCirugia' defaultValue={pacient.tCirugia} />
+                    <p>HALLAZGO</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='tCirugia' defaultValue={pacient.tCirugia} />
+                    <p>ABORDAJE</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='tCirugia' defaultValue={pacient.tCirugia} />
+                    <p>CEMENTADO:</p><br/>
+                    <input className='mr-2' type='radio' name='escalera' value='publico'/>
+                    <label>SI</label><br/>
+                    <p>SIGNOS</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='escalones' defaultValue={pacient.escalones} />
+                    
+                    <input className='mr-2' type='radio' name='escalera' value='privado'/>
+                    <label>NO</label><br/>
+                    <p>LAVADO INTRAOPERATORIO</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='escalones' defaultValue={pacient.escalones} />
+                    <p>NOMBRE DEL IMPLANTE</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='escalones' defaultValue={pacient.escalones} />
+                    <p>DIAGNOSTICO POST</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='escalones' defaultValue={pacient.escalones} />
+                    <p>RESULTADOS</p>
+                    <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='text' name='escalones' defaultValue={pacient.escalones} />
+                    
                     {/* FECHA DE POSIBLE CIRUGIA */}
                     {/* <p>FECHA DE POSIBLE CIRUGIA</p>
                     <input onChange={handlechange} className='w-full py-2 my-7 border border-slate-400 focus:outline-none' type='date' name='fechaCirugia' defaultValue={pacient.fechaCirugia} /> */}
